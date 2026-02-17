@@ -37,7 +37,7 @@ async function stickercropCommand(sock, chatId, message) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
+                    newsletterName: 'Streamix',
                     serverMessageId: -1
                 }
             }
@@ -59,7 +59,7 @@ async function stickercropCommand(sock, chatId, message) {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'KnightBot MD',
+                        newsletterName: 'Streamix',
                         serverMessageId: -1
                     }
                 }
@@ -187,7 +187,7 @@ async function stickercropCommand(sock, chatId, message) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
+                    newsletterName: 'Streamix',
                     serverMessageId: -1
                 }
             }
