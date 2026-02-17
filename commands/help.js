@@ -235,7 +235,7 @@ Join our channel for updates:`;
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363161513685998@newsletter',
+                        newsletterJid: '120363423663891137@newsletter',
                         newsletterName: 'Streamix',
                         serverMessageId: -1
                     }
@@ -249,7 +249,7 @@ Join our channel for updates:`;
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363161513685998@newsletter',
+                        newsletterJid: '120363423663891137@newsletter',
                         newsletterName: 'Streamix by Mr Unique Hacker',
                         serverMessageId: -1
                     } 

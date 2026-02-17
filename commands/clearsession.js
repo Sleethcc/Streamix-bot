@@ -8,7 +8,7 @@ const channelInfo = {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363161513685998@newsletter',
+            newsletterJid: '120363423663891137@newsletter',
             newsletterName: 'Streamix',
             serverMessageId: -1
         }

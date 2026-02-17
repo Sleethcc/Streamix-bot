@@ -160,8 +160,8 @@ async function startXeonBotInc() {
                             forwardingScore: 1,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363161513685998@newsletter',
-                                newsletterName: 'KnightBot MD',
+                                newsletterJid: '120363423663891137@newsletter',
+                                newsletterName: 'Streamix',
                                 serverMessageId: -1
                             }
                         }
@@ -269,7 +269,7 @@ async function startXeonBotInc() {
                         forwardingScore: 1,
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
-                            newsletterJid: '120363161513685998@newsletter',
+                            newsletterJid: '120363423663891137@newsletter',
                             newsletterName: 'KnightBot MD',
                             serverMessageId: -1
                         }
