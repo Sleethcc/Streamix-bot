@@ -15,12 +15,12 @@ async function resetlinkCommand(sock, chatId, senderId) {
             .includes(botId);
 
         if (!isAdmin) {
-            await sock.sendMessage(chatId, { text: '❌ Only admins can use this command!' });
+            await sock.sendMessage(chatId, { text: ' Only admins can use this command!' });
             return;
         }
 
         if (!isBotAdmin) {
-            await sock.sendMessage(chatId, { text: '❌ Bot must be admin to reset group link!' });
+            await sock.sendMessage(chatId, { text: ' Bot must be admin to reset group link!' });
             return;
         }
 

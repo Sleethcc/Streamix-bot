@@ -26,7 +26,7 @@ async function autoreadCommand(sock, chatId, message) {
         
         if (!message.key.fromMe && !isOwner) {
             await sock.sendMessage(chatId, {
-                text: '❌ This command is only available for the owner!',
+                text: ' This command is only available for the owner!',
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: true,
@@ -57,7 +57,7 @@ async function autoreadCommand(sock, chatId, message) {
                 config.enabled = false;
             } else {
                 await sock.sendMessage(chatId, {
-                    text: '❌ Invalid option! Use: .autoread on/off',
+                    text: ' Invalid option! Use: .autoread on/off',
                     contextInfo: {
                         forwardingScore: 1,
                         isForwarded: true,
@@ -95,7 +95,7 @@ async function autoreadCommand(sock, chatId, message) {
     } catch (error) {
         console.error('Error in autoread command:', error);
         await sock.sendMessage(chatId, {
-            text: '❌ Error processing command!',
+            text: ' Error processing command!',
             contextInfo: {
                 forwardingScore: 1,
                 isForwarded: true,

@@ -152,7 +152,7 @@ async function stickerCommand(sock, chatId, message) {
         const json = {
             'sticker-pack-id': crypto.randomBytes(32).toString('hex'),
             'sticker-pack-name': settings.packname || 'Streamix',
-            'emojis': ['🤖']
+            'emojis': ['🐋']
         };
 
         // Create exif buffer
@@ -182,7 +182,7 @@ async function stickerCommand(sock, chatId, message) {
                     const json2 = {
                         'sticker-pack-id': crypto.randomBytes(32).toString('hex'),
                         'sticker-pack-name': settings.packname || 'Streamix',
-                        'emojis': ['🤖']
+                        'emojis': ['🐋']
                     };
                     const exifAttr2 = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
                     const jsonBuffer2 = Buffer.from(JSON.stringify(json2), 'utf8');

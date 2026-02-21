@@ -197,7 +197,7 @@ async function igsCommand(sock, chatId, message, crop = false) {
 
         const downloadData = await igdl(urlMatch[0]).catch(() => null);
         if (!downloadData || !downloadData.data) {
-            await sock.sendMessage(chatId, { text: '❌ Failed to fetch media from Instagram link.' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: ' Failed to fetch media from Instagram link.' }, { quoted: message });
             return;
         }
         // Raw items
@@ -212,7 +212,7 @@ async function igsCommand(sock, chatId, message, crop = false) {
             }
         }
         if (items.length === 0) {
-            await sock.sendMessage(chatId, { text: '❌ No media found at the provided link.' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: ' No media found at the provided link.' }, { quoted: message });
             return;
         }
 

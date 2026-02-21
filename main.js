@@ -122,6 +122,7 @@ const songCommand = require('./commands/song');
 const aiCommand = require('./commands/ai');
 const urlCommand = require('./commands/url');
 const { handleTranslateCommand } = require('./commands/translate');
+const { giveawayCommand, joinGiveaway } = require('./commands/giveaway');
 const { handleSsCommand } = require('./commands/ss');
 const { addCommandReaction, handleAreactCommand } = require('./lib/reactions');
 const { goodnightCommand } = require('./commands/goodnight');
@@ -146,7 +147,7 @@ const soraCommand = require('./commands/sora');
 // Global settings
 global.packname = settings.packname;
 global.author = settings.author;
-global.channelLink = "https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A";
+global.channelLink = "https://whatsapp.com/channel/0029VbC7LoV1iUxf39F1Xn1s";
 global.ytch = "Mr Unique Hacker";
 
 // Add this near the top of main.js with other global configurations
@@ -231,7 +232,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
         // Only log command usage
         if (userMessage.startsWith('.')) {
             console.log(`📝 Command used in ${isGroup ? 'group' : 'private'}: ${userMessage}`);
+            await addCommandReaction(sock, message);
         }
+        
         // Read bot mode once; don't early-return so moderation can still run in private mode
         let isPublic = true;
         try {
@@ -618,6 +621,16 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 break;
             case userMessage.startsWith('.trivia'):
                 startTrivia(sock, chatId);
+                break;
+            case userMessage.startsWith('.giveaway'):
+                {
+                    const args = userMessage.split(' ').slice(1);
+                    await giveawayCommand(sock, chatId, message, args);
+                }
+                break;
+
+            case userMessage === '.join':
+                await joinGiveaway(sock, chatId, message);
                 break;
             case userMessage.startsWith('.answer'):
                 const answer = userMessage.split(' ').slice(1).join(' ');

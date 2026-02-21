@@ -20,7 +20,7 @@ async function handleSsCommand(sock, chatId, message, match) {
         // Validate URL
         if (!url.startsWith('http://') && !url.startsWith('https://')) {
             return sock.sendMessage(chatId, {
-                text: '❌ Please provide a valid URL starting with http:// or https://',
+                text: ' Please provide a valid URL starting with http:// or https://',
                 quoted: message
             });
         }
@@ -44,9 +44,9 @@ async function handleSsCommand(sock, chatId, message, match) {
         });
 
     } catch (error) {
-        console.error('❌ Error in ss command:', error);
+        console.error(' Error in ss command:', error);
         await sock.sendMessage(chatId, {
-            text: '❌ Failed to take screenshot. Please try again in a few minutes.\n\nPossible reasons:\n• Invalid URL\n• Website is blocking screenshots\n• Website is down\n• API service is temporarily unavailable',
+            text: ' Failed to take screenshot. Please try again in a few minutes.\n\nPossible reasons:\n• Invalid URL\n• Website is blocking screenshots\n• Website is down\n• API service is temporarily unavailable',
             quoted: message
         });
     }

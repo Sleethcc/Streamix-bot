@@ -232,7 +232,7 @@ async function tiktokCommand(sock, chatId, message) {
 
             // If we reach here, no method worked
             return await sock.sendMessage(chatId, { 
-                text: "❌ Failed to download TikTok video. All download methods failed. Please try again with a different link or check if the video is available."
+                text: " Failed to download TikTok video. All download methods failed. Please try again with a different link or check if the video is available."
             },{ quoted: message });
         } catch (error) {
             console.error('Error in TikTok download:', error);

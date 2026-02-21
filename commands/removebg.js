@@ -42,7 +42,7 @@ module.exports = {
                     imageUrl = url;
                 } else {
                     return sock.sendMessage(chatId, { 
-                        text: '❌ Invalid URL provided.\n\nUsage: `.removebg https://example.com/image.jpg`' 
+                        text: ' Invalid URL provided.\n\nUsage: `.removebg https://example.com/image.jpg`' 
                     }, { quoted: message });
                 }
             } else {
@@ -81,12 +81,12 @@ module.exports = {
         } catch (error) {
             console.error('RemoveBG Error:', error.message);
             
-            let errorMessage = '❌ Failed to remove background.';
+            let errorMessage = ' Failed to remove background.';
             
             if (error.response?.status === 429) {
                 errorMessage = '⏰ Rate limit exceeded. Please try again later.';
             } else if (error.response?.status === 400) {
-                errorMessage = '❌ Invalid image URL or format.';
+                errorMessage = ' Invalid image URL or format.';
             } else if (error.response?.status === 500) {
                 errorMessage = '🔧 Server error. Please try again later.';
             } else if (error.code === 'ECONNABORTED') {

@@ -32,7 +32,7 @@ async function autoStatusCommand(sock, chatId, msg, args) {
         
         if (!msg.key.fromMe && !isOwner) {
             await sock.sendMessage(chatId, { 
-                text: '❌ This command can only be used by the owner!',
+                text: ' This command can only be used by the owner!',
                 ...channelInfo
             });
             return;
@@ -66,14 +66,14 @@ async function autoStatusCommand(sock, chatId, msg, args) {
             config.enabled = false;
             fs.writeFileSync(configPath, JSON.stringify(config));
             await sock.sendMessage(chatId, { 
-                text: '❌ Auto status view has been disabled!\nBot will no longer automatically view statuses.',
+                text: ' Auto status view has been disabled!\nBot will no longer automatically view statuses.',
                 ...channelInfo
             });
         } else if (command === 'react') {
             // Handle react subcommand
             if (!args[1]) {
                 await sock.sendMessage(chatId, { 
-                    text: '❌ Please specify on/off for reactions!\nUse: .autostatus react on/off',
+                    text: ' Please specify on/off for reactions!\nUse: .autostatus react on/off',
                     ...channelInfo
                 });
                 return;
@@ -91,18 +91,18 @@ async function autoStatusCommand(sock, chatId, msg, args) {
                 config.reactOn = false;
                 fs.writeFileSync(configPath, JSON.stringify(config));
                 await sock.sendMessage(chatId, { 
-                    text: '❌ Status reactions have been disabled!\nBot will no longer react to status updates.',
+                    text: ' Status reactions have been disabled!\nBot will no longer react to status updates.',
                     ...channelInfo
                 });
             } else {
                 await sock.sendMessage(chatId, { 
-                    text: '❌ Invalid reaction command! Use: .autostatus react on/off',
+                    text: ' Invalid reaction command! Use: .autostatus react on/off',
                     ...channelInfo
                 });
             }
         } else {
             await sock.sendMessage(chatId, { 
-                text: '❌ Invalid command! Use:\n.autostatus on/off - Enable/disable auto status view\n.autostatus react on/off - Enable/disable status reactions',
+                text: ' Invalid command! Use:\n.autostatus on/off - Enable/disable auto status view\n.autostatus react on/off - Enable/disable status reactions',
                 ...channelInfo
             });
         }
@@ -110,7 +110,7 @@ async function autoStatusCommand(sock, chatId, msg, args) {
     } catch (error) {
         console.error('Error in autostatus command:', error);
         await sock.sendMessage(chatId, { 
-            text: '❌ Error occurred while managing auto status!\n' + error.message,
+            text: ' Error occurred while managing auto status!\n' + error.message,
             ...channelInfo
         });
     }

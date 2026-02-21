@@ -36,7 +36,7 @@ async function sudoCommand(sock, chatId, message) {
     }
 
     if (!isOwner) {
-        await sock.sendMessage(chatId, { text: '❌ Only owner can add/remove sudo users. Use .sudo list to view.' },{quoted :message});
+        await sock.sendMessage(chatId, { text: ' Only owner can add/remove sudo users. Use .sudo list to view.' },{quoted :message});
         return;
     }
 
@@ -48,7 +48,7 @@ async function sudoCommand(sock, chatId, message) {
 
     if (sub === 'add') {
         const ok = await addSudo(targetJid);
-        await sock.sendMessage(chatId, { text: ok ? `✅ Added sudo: ${targetJid}` : '❌ Failed to add sudo' },{quoted :message});
+        await sock.sendMessage(chatId, { text: ok ? `✅ Added sudo: ${targetJid}` : ' Failed to add sudo' },{quoted :message});
         return;
     }
 
@@ -59,7 +59,7 @@ async function sudoCommand(sock, chatId, message) {
             return;
         }
         const ok = await removeSudo(targetJid);
-        await sock.sendMessage(chatId, { text: ok ? `✅ Removed sudo: ${targetJid}` : '❌ Failed to remove sudo' },{quoted :message});
+        await sock.sendMessage(chatId, { text: ok ? `✅ Removed sudo: ${targetJid}` : ' Failed to remove sudo' },{quoted :message});
         return;
     }
 }

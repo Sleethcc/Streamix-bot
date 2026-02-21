@@ -110,7 +110,7 @@ async function sendAnimu(sock, chatId, message, type) {
 
     await sock.sendMessage(
         chatId,
-        { text: '❌ Failed to fetch animu.' },
+        { text: ' Failed to fetch animu.' },
         { quoted: message }
     );
 }
@@ -137,14 +137,14 @@ async function animeCommand(sock, chatId, message, args) {
         }
 
         if (!supported.includes(sub)) {
-            await sock.sendMessage(chatId, { text: `❌ Unsupported type: ${sub}. Try one of: ${supported.join(', ')}` }, { quoted: message });
+            await sock.sendMessage(chatId, { text: ` Unsupported type: ${sub}. Try one of: ${supported.join(', ')}` }, { quoted: message });
             return;
         }
 
         await sendAnimu(sock, chatId, message, sub);
     } catch (err) {
         console.error('Error in animu command:', err);
-        await sock.sendMessage(chatId, { text: '❌ An error occurred while fetching animu.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' An error occurred while fetching animu.' }, { quoted: message });
     }
 }
 

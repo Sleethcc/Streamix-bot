@@ -26,7 +26,7 @@ async function shipCommand(sock, chatId, msg, groupMetadata) {
 
     } catch (error) {
         console.error('Error in ship command:', error);
-        await sock.sendMessage(chatId, { text: '❌ Failed to ship! Make sure this is a group.' });
+        await sock.sendMessage(chatId, { text: ' Failed to ship! Make sure this is a group.' });
     }
 }
 

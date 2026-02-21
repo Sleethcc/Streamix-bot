@@ -49,7 +49,7 @@ async function handleHeart(sock, chatId, message) {
         await sock.sendMessage(chatId, { image: Buffer.from(response.data) }, { quoted: message });
     } catch (error) {
         console.error('Error in misc heart:', error);
-        await sock.sendMessage(chatId, { text: '❌ Failed to create heart image. Try again later.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to create heart image. Try again later.' }, { quoted: message });
     }
 }
 
@@ -190,7 +190,7 @@ async function miscCommand(sock, chatId, message, args) {
         }
     } catch (error) {
         console.error('Error in misc command:', error);
-        await sock.sendMessage(chatId, { text: '❌ Failed to generate image. Check your parameters and try again.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to generate image. Check your parameters and try again.' }, { quoted: message });
     }
 }
 

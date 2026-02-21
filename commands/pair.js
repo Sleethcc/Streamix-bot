@@ -24,7 +24,7 @@ async function pairCommand(sock, chatId, message, q) {
 
         if (numbers.length === 0) {
             return await sock.sendMessage(chatId, {
-                text: "Invalid number❌️ Please use the correct format!",
+                text: "Invalid number️ Please use the correct format!",
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: true,

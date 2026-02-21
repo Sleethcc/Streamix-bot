@@ -36,7 +36,7 @@ async function reminiCommand(sock, chatId, message, args) {
                 imageUrl = url;
             } else {
                 return sock.sendMessage(chatId, { 
-                    text: '❌ Invalid URL provided.\n\nUsage: `.remini https://example.com/image.jpg`' 
+                    text: ' Invalid URL provided.\n\nUsage: `.remini https://example.com/image.jpg`' 
                 }, { quoted: message });
             }
         } else {
@@ -90,12 +90,12 @@ async function reminiCommand(sock, chatId, message, args) {
     } catch (error) {
         console.error('Remini Error:', error.message);
         
-        let errorMessage = '❌ Failed to enhance image.';
+        let errorMessage = ' Failed to enhance image.';
         
         if (error.response?.status === 429) {
             errorMessage = '⏰ Rate limit exceeded. Please try again later.';
         } else if (error.response?.status === 400) {
-            errorMessage = '❌ Invalid image URL or format.';
+            errorMessage = ' Invalid image URL or format.';
         } else if (error.response?.status === 500) {
             errorMessage = '🔧 Server error. Please try again later.';
         } else if (error.code === 'ECONNABORTED') {
@@ -103,7 +103,7 @@ async function reminiCommand(sock, chatId, message, args) {
         } else if (error.message.includes('ENOTFOUND') || error.message.includes('ECONNREFUSED')) {
             errorMessage = '🌐 Network error. Please check your connection.';
         } else if (error.message.includes('Error processing image')) {
-            errorMessage = '❌ Image processing failed. Please try with a different image.';
+            errorMessage = ' Image processing failed. Please try with a different image.';
         }
         
         await sock.sendMessage(chatId, { 

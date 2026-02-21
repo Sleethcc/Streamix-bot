@@ -11,7 +11,7 @@ async function tictactoeCommand(sock, chatId, senderId, text) {
             [room.game.playerX, room.game.playerO].includes(senderId)
         )) {
             await sock.sendMessage(chatId, { 
-                text: '❌ You are still in a game. Type *surrender* to quit.' 
+                text: ' You are still in a game. Type *surrender* to quit.' 
             });
             return;
         }
@@ -86,7 +86,7 @@ ${arr.slice(6).join('')}
     } catch (error) {
         console.error('Error in tictactoe command:', error);
         await sock.sendMessage(chatId, { 
-            text: '❌ Error starting game. Please try again.' 
+            text: ' Error starting game. Please try again.' 
         });
     }
 }
@@ -109,7 +109,7 @@ async function handleTicTacToeMove(sock, chatId, senderId, text) {
         // Allow surrender at any time, not just during player's turn
         if (senderId !== room.game.currentTurn && !isSurrender) {
             await sock.sendMessage(chatId, { 
-                text: '❌ Not your turn!' 
+                text: ' Not your turn!' 
             });
             return;
         }
@@ -121,7 +121,7 @@ async function handleTicTacToeMove(sock, chatId, senderId, text) {
 
         if (!ok) {
             await sock.sendMessage(chatId, { 
-                text: '❌ Invalid move! That position is already taken.' 
+                text: ' Invalid move! That position is already taken.' 
             });
             return;
         }

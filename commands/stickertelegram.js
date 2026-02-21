@@ -27,7 +27,7 @@ async function stickerTelegramCommand(sock, chatId, msg) {
         // Validate URL format
         if (!args[0].match(/(https:\/\/t.me\/addstickers\/)/gi)) {
             await sock.sendMessage(chatId, { 
-                text: '❌ Invalid URL! Make sure it\'s a Telegram sticker URL.' 
+                text: ' Invalid URL! Make sure it\'s a Telegram sticker URL.' 
             });
             return;
         }
@@ -178,7 +178,7 @@ async function stickerTelegramCommand(sock, chatId, msg) {
     } catch (error) {
         console.error('Error in stickertelegram command:', error);
         await sock.sendMessage(chatId, { 
-            text: '❌ Failed to process Telegram stickers!\nMake sure:\n1. The URL is correct\n2. The sticker pack exists\n3. The sticker pack is public' 
+            text: ' Failed to process Telegram stickers!\nMake sure:\n1. The URL is correct\n2. The sticker pack exists\n3. The sticker pack is public' 
         });
     }
 }

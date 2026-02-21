@@ -16,7 +16,7 @@ async function goodnightCommand(sock, chatId, message) {
         await sock.sendMessage(chatId, { text: goodnightMessage }, { quoted: message });
     } catch (error) {
         console.error('Error in goodnight command:', error);
-        await sock.sendMessage(chatId, { text: '❌ Failed to get goodnight message. Please try again later!' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to get goodnight message. Please try again later!' }, { quoted: message });
     }
 }
 

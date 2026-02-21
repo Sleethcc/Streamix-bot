@@ -34,7 +34,7 @@ async function setGroupDescription(sock, chatId, senderId, text, message) {
         await sock.groupUpdateDescription(chatId, desc);
         await sock.sendMessage(chatId, { text: '✅ Group description updated.' }, { quoted: message });
     } catch (e) {
-        await sock.sendMessage(chatId, { text: '❌ Failed to update group description.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to update group description.' }, { quoted: message });
     }
 }
 
@@ -50,7 +50,7 @@ async function setGroupName(sock, chatId, senderId, text, message) {
         await sock.groupUpdateSubject(chatId, name);
         await sock.sendMessage(chatId, { text: '✅ Group name updated.' }, { quoted: message });
     } catch (e) {
-        await sock.sendMessage(chatId, { text: '❌ Failed to update group name.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to update group name.' }, { quoted: message });
     }
 }
 
@@ -79,7 +79,7 @@ async function setGroupPhoto(sock, chatId, senderId, message) {
         try { fs.unlinkSync(imgPath); } catch (_) {}
         await sock.sendMessage(chatId, { text: '✅ Group profile photo updated.' }, { quoted: message });
     } catch (e) {
-        await sock.sendMessage(chatId, { text: '❌ Failed to update group profile photo.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to update group profile photo.' }, { quoted: message });
     }
 }
 

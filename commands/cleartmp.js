@@ -54,7 +54,7 @@ async function clearTmpCommand(sock, chatId, msg) {
         
         if (!msg.key.fromMe && !isOwner) {
             await sock.sendMessage(chatId, { 
-                text: '❌ This command is only available for the owner!' 
+                text: ' This command is only available for the owner!' 
             });
             return;
         }
@@ -67,14 +67,14 @@ async function clearTmpCommand(sock, chatId, msg) {
             });
         } else {
             await sock.sendMessage(chatId, { 
-                text: `❌ ${result.message}` 
+                text: ` ${result.message}` 
             });
         }
 
     } catch (error) {
         console.error('Error in cleartmp command:', error);
         await sock.sendMessage(chatId, { 
-            text: '❌ Failed to clear temporary files!' 
+            text: ' Failed to clear temporary files!' 
         });
     }
 }

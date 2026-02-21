@@ -1,8 +1,8 @@
 const settings = {
   packname: '*streamix*',
   author: '‎',
-  botName: "Streamix",
-  botOwner: 'Sleeth', // Your name
+  botName: "*Streamix*",
+  botOwner: 'Sleeth ஜ', // Your name
   ownerNumber: '593994119384', //Set your number here without + symbol, just add country code & number without any space
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",

@@ -7,12 +7,12 @@ async function helpCommand(sock, chatId, message) {
 ╭━━━〔 🐋 ${settings.botName || 'streamix'} 〕━━━⬣
 ┃ ✦ Version: ${settings.version || '1.0.0'}
 ┃ ✦ Owner: ${settings.botOwner || 'Sleeth'}
-┃ ✦ YouTube: ${global.ytch}
+┃ ✦ Credits: ${global.ytch}
 ╰━━━━━━━━━━━━━━━━━━⬣
 
 *Available Commands:*
 
-╭━━━〔 🌐 *General* 〕━━━⬣
+╭━━━〔 🐋 *General* 〕━━━⬣
 ┃ ✦ .help or .menu
 ┃ ✦ .ping
 ┃ ✦ .alive
@@ -33,10 +33,9 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .ss <link>
 ┃ ✦ .jid
 ┃ ✦ .url
-╚═══════════════════╝ 
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-👮‍♂️ *Admin Commands*:
+╭━━━〔 🐋 *Admins* 〕━━━━⬣
 ┃ ✦ .ban @user
 ┃ ✦ .promote @user
 ┃ ✦ .demote @user
@@ -61,10 +60,9 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .setgdesc <description>
 ┃ ✦ .setgname <new name>
 ┃ ✦ .setgpp (reply to image)
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🔒 *Owner Commands*:
+╭━━━〔 🐋 *Owner* 〕━━━━━⬣
 ┃ ✦ .mode <public/private>
 ┃ ✦ .clearsession
 ┃ ✦ .antidelete
@@ -82,10 +80,9 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .pmblocker setmsg <text>
 ┃ ✦ .setmention <reply to msg>
 ┃ ✦ .mention <on/off>
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🎨 *Image/Sticker Commands*:
+╭━━━〔 🐋 *Image* 〕━━━━━⬣
 ┃ ✦ .blur <image>
 ┃ ✦ .simage <reply to sticker>
 ┃ ✦ .sticker <reply to image>
@@ -98,20 +95,26 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .emojimix <emj1>+<emj2>
 ┃ ✦ .igs <insta link>
 ┃ ✦ .igsc <insta link>
-╚═══════════════════╝  
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🖼️ *Pies Commands*:
+╭━〔 🐋 *Giveaways* 〕━⬣
+┃ ✦ .giveaway start <minutes>\n┃ <winners> <prize>
+┃ ✦ .giveaway end
+┃ ✦ .giveaway info
+┃ ✦ .giveaway cancel
+┃ ✦ .giveaway members
+╰━━━━━━━━━━━━━━━━━━⬣
+
+╭━━━〔 🐋 *Pies* 〕━━━━━━⬣
 ┃ ✦ .pies <country>
 ┃ ✦ .china 
 ┃ ✦ .indonesia 
 ┃ ✦ .japan 
 ┃ ✦ .korea 
 ┃ ✦ .hijab
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🎮 *Game Commands*:
+╭━━━〔 🐋 *Games* 〕━━━━━⬣
 ┃ ✦ .tictactoe @user
 ┃ ✦ .hangman
 ┃ ✦ .guess <letter>
@@ -119,19 +122,17 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .answer <answer>
 ┃ ✦ .truth
 ┃ ✦ .dare
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🤖 *AI Commands*:
+╭━━━〔 🐋 *AI* 〕━━━━━━━━⬣
 ┃ ✦ .gpt <question>
 ┃ ✦ .gemini <question>
 ┃ ✦ .imagine <prompt>
 ┃ ✦ .flux <prompt>
 ┃ ✦ .sora <prompt>
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🎯 *Fun Commands*:
+╭━━━〔 🐋 *Fun* 〕━━━━━━━⬣
 ┃ ✦ .compliment @user
 ┃ ✦ .insult @user
 ┃ ✦ .flirt 
@@ -143,10 +144,9 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .ship @user
 ┃ ✦ .simp @user
 ┃ ✦ .stupid @user [text]
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🔤 *Textmaker*:
+╭━━━〔 🐋 *Text* 〕━━━━━━⬣
 ┃ ✦ .metallic <text>
 ┃ ✦ .ice <text>
 ┃ ✦ .snow <text>
@@ -165,10 +165,9 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .blackpink <text>
 ┃ ✦ .glitch <text>
 ┃ ✦ .fire <text>
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-📥 *Downloader*:
+╭━━━〔 🐋 *Download* 〕━━⬣
 ┃ ✦ .play <song_name>
 ┃ ✦ .song <song_name>
 ┃ ✦ .spotify <query>
@@ -177,10 +176,9 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .tiktok <link>
 ┃ ✦ .video <song name>
 ┃ ✦ .ytmp4 <Link>
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🧩 *MISC*:
+╭━━━〔 🐋 *Misc* 〕━━━━━━⬣
 ┃ ✦ .heart
 ┃ ✦ .horny
 ┃ ✦ .circle
@@ -197,10 +195,9 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .jail 
 ┃ ✦ .passed 
 ┃ ✦ .triggered
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-🖼️ *ANIME*:
+╭━━━〔 🐋 *Anime* 〕━━━━━⬣
 ┃ ✦ .nom 
 ┃ ✦ .poke 
 ┃ ✦ .cry 
@@ -209,18 +206,17 @@ async function helpCommand(sock, chatId, message) {
 ┃ ✦ .hug 
 ┃ ✦ .wink 
 ┃ ✦ .facepalm 
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-╔═══════════════════╗
-💻 *Github Commands:*
+╭━━━〔 🐋 *Github* 〕━━━━⬣
 ┃ ✦ .git
 ┃ ✦ .github
 ┃ ✦ .sc
 ┃ ✦ .script
 ┃ ✦ .repo
-╚═══════════════════╝
+╰━━━━━━━━━━━━━━━━━━⬣
 
-Join our channel for updates:`;
+𝐉𝐎𝐈𝐍 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐅𝐎𝐑 𝐔𝐏𝐃𝐀𝐓𝐄𝐒:`;
 
     try {
         const imagePath = path.join(__dirname, '../assets/bot_image.jpg');
@@ -250,7 +246,7 @@ Join our channel for updates:`;
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363423663891137@newsletter',
-                        newsletterName: 'Streamix by Mr Unique Hacker',
+                        newsletterName: 'Streamix',
                         serverMessageId: -1
                     } 
                 }

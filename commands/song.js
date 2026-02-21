@@ -236,7 +236,7 @@ async function songCommand(sock, chatId, message) {
 
     } catch (err) {
         console.error('Song command error:', err);
-        await sock.sendMessage(chatId, { text: '❌ Failed to download song.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to download song.' }, { quoted: message });
     }
 }
 

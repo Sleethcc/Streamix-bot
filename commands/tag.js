@@ -3,6 +3,8 @@ const { downloadContentFromMessage } = require('@whiskeysockets/baileys');
 const fs = require('fs');
 const path = require('path');
 
+const SIGNATURE = '\n\n✦ 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐱 🐋';
+
 async function downloadMediaMessage(message, mediaType) {
     const stream = await downloadContentFromMessage(message, mediaType);
     let buffer = Buffer.from([]);
@@ -18,12 +20,14 @@ async function tagCommand(sock, chatId, senderId, messageText, replyMessage, mes
     const { isSenderAdmin, isBotAdmin } = await isAdmin(sock, chatId, senderId);
 
     if (!isBotAdmin) {
-        await sock.sendMessage(chatId, { text: 'Please make the bot an admin first.' }, { quoted: message });
+        await sock.sendMessage(chatId, { 
+            text: 'Please make the bot an admin first.' + SIGNATURE 
+        }, { quoted: message });
         return;
     }
 
     if (!isSenderAdmin) {
-        const stickerPath = './assets/sticktag.webp';  // Path to your sticker
+        const stickerPath = './assets/sticktag.webp';
         if (fs.existsSync(stickerPath)) {
             const stickerBuffer = fs.readFileSync(stickerPath);
             await sock.sendMessage(chatId, { sticker: stickerBuffer }, { quoted: message });
@@ -38,38 +42,45 @@ async function tagCommand(sock, chatId, senderId, messageText, replyMessage, mes
     if (replyMessage) {
         let messageContent = {};
 
-        // Handle image messages
+        // IMAGE
         if (replyMessage.imageMessage) {
             const filePath = await downloadMediaMessage(replyMessage.imageMessage, 'image');
             messageContent = {
                 image: { url: filePath },
-                caption: messageText || replyMessage.imageMessage.caption || '',
+                caption: (messageText || replyMessage.imageMessage.caption || '') + SIGNATURE,
                 mentions: mentionedJidList
             };
         }
-        // Handle video messages
+
+        // VIDEO
         else if (replyMessage.videoMessage) {
             const filePath = await downloadMediaMessage(replyMessage.videoMessage, 'video');
             messageContent = {
                 video: { url: filePath },
-                caption: messageText || replyMessage.videoMessage.caption || '',
+                caption: (messageText || replyMessage.videoMessage.caption || '') + SIGNATURE,
                 mentions: mentionedJidList
             };
         }
-        // Handle text messages
+
+        // TEXT
         else if (replyMessage.conversation || replyMessage.extendedTextMessage) {
+            const originalText =
+                replyMessage.conversation ||
+                replyMessage.extendedTextMessage.text;
+
             messageContent = {
-                text: replyMessage.conversation || replyMessage.extendedTextMessage.text,
+                text: originalText + SIGNATURE,
                 mentions: mentionedJidList
             };
         }
-        // Handle document messages
+
+        // DOCUMENT
         else if (replyMessage.documentMessage) {
             const filePath = await downloadMediaMessage(replyMessage.documentMessage, 'document');
             messageContent = {
                 document: { url: filePath },
                 fileName: replyMessage.documentMessage.fileName,
-                caption: messageText || '',
+                caption: (messageText || '') + SIGNATURE,
                 mentions: mentionedJidList
             };
         }
@@ -77,9 +88,10 @@ async function tagCommand(sock, chatId, senderId, messageText, replyMessage, mes
         if (Object.keys(messageContent).length > 0) {
             await sock.sendMessage(chatId, messageContent);
         }
+
     } else {
         await sock.sendMessage(chatId, {
-            text: messageText || "Tagged message",
+            text: (messageText || "Tagged message") + SIGNATURE,
             mentions: mentionedJidList
         });
     }

@@ -16,7 +16,7 @@ async function truthCommand(sock, chatId, message) {
         await sock.sendMessage(chatId, { text: truthMessage }, { quoted: message });
     } catch (error) {
         console.error('Error in truth command:', error);
-        await sock.sendMessage(chatId, { text: '❌ Failed to get truth. Please try again later!' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' Failed to get truth. Please try again later!' }, { quoted: message });
     }
 }
 
